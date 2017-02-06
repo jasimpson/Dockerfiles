@@ -25,7 +25,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Build libfixbuf
-ADD http://tools.netsa.cert.org/releases/libfixbuf-1.7.1.tar.gz /tmp/libfixbuf-$LIBFIXBUF_VERSION.tar.gz
+ADD http://tools.netsa.cert.org/releases/libfixbuf-$LIBFIXBUF_VERSION.tar.gz /tmp/libfixbuf-$LIBFIXBUF_VERSION.tar.gz
 WORKDIR "/tmp"
 RUN tar -zxvf libfixbuf-$LIBFIXBUF_VERSION.tar.gz
 WORKDIR "/tmp/libfixbuf-$LIBFIXBUF_VERSION"
@@ -46,7 +46,7 @@ WORKDIR "/tmp/super_mediator-$SM_VERSION"
 RUN ./configure --with-mysql=no && make && make install
 
 # Build silk
-ADD https://tools.netsa.cert.org/releases/silk-3.14.0.tar.gz /tmp/silk-$SILK_VERSION.tar.gz
+ADD https://tools.netsa.cert.org/releases/silk-$SILK_VERSION.tar.gz /tmp/silk-$SILK_VERSION.tar.gz
 WORKDIR "/tmp"
 RUN tar -zxvf silk-$SILK_VERSION.tar.gz
 WORKDIR "/tmp/silk-$SILK_VERSION"
