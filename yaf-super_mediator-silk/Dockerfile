@@ -7,9 +7,6 @@ ENV YAF_VERSION=2.8.4
 ENV SM_VERSION=1.5.0
 ENV SILK_VERSION=3.14.0
 
-COPY run.sh /run.sh
-RUN chmod 0755 /run.sh
-
 # Install Dependencies
 RUN apt-get update && \
     apt-get install -y \
@@ -59,5 +56,8 @@ RUN ./configure \
 RUN ldconfig
 
 VOLUME ["/files"]
+
+COPY run.sh /run.sh
+RUN chmod 0755 /run.sh
 
 ENTRYPOINT ["/run.sh"]
