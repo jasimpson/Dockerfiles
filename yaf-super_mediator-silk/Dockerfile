@@ -58,4 +58,6 @@ RUN ./configure \
 
 RUN ldconfig
 
+VOLUME ["/files"]
+
 ENTRYPOINT ["/run.sh"]
