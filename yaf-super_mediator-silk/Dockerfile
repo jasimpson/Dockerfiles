@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 
 LABEL repo="github.com/jasimpson/Dockerfiles"
+LABEL authors="@jasimpson,@lapolonio"
 
 ENV LIBFIXBUF_VERSION=1.7.1
 ENV YAF_VERSION=2.8.4
