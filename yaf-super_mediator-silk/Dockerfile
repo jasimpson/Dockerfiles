@@ -34,7 +34,7 @@ ADD http://tools.netsa.cert.org/releases/yaf-$YAF_VERSION.tar.gz /tmp/yaf-$YAF_V
 WORKDIR "/tmp"
 RUN tar -zxvf yaf-$YAF_VERSION.tar.gz
 WORKDIR "/tmp/yaf-$YAF_VERSION"
-RUN ./configure --enable-applabel --enable-plugins && make && make install
+RUN ./configure --enable-applabel --enable-plugins --enable-entropy && make && make install
 
 # Build super_mediator
 ADD http://tools.netsa.cert.org/releases/super_mediator-$SM_VERSION.tar.gz /tmp/super_mediator-$SM_VERSION.tar.gz
