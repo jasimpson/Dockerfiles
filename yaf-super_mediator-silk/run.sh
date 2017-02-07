@@ -61,8 +61,11 @@ yaf \
 --in /files/test.pcap \
 --applabel --max-payload=1500 \
 --plugin-name=/usr/local/lib/yaf/dpacketplugin.la \
+--flow-stats \
+--entropy \
 | \
 super_mediator \
+-c /files/dpi_multi_file_extra_fields.conf \
 --out /files/pcap2ipfix-applabel-dpi-sm.psv \
 --output-mode text --print-headers \
 --log /files/pcap2ipfix-applabel-dpi-sm.log --verbose
